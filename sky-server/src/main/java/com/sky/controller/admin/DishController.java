@@ -43,7 +43,7 @@ public class DishController {
     @ApiOperation("分页查询菜品信息")
     public Result<PageResult> page(DishPageQueryDTO dishPageQueryDTO) {
      log.info("分页查询菜品信息,参数:{}", dishPageQueryDTO);
-//        PageResult pageResult = dishService.pageQuery(dishPageQueryDTO);
-        return Result.success();
+        PageResult pageResult = dishService.pageQuery(dishPageQueryDTO);
+        return Result.success(pageResult);
     }
 }
